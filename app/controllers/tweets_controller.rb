@@ -1,11 +1,15 @@
 class TweetsController < ApplicationController
 
+	before_action :authenticate_user!
+	
 	def new
 		@tweet = Tweet.new
 	end
 
 	def create
-		@tweet = Tweet.create(tweet_params)
+		@tweet = Tweet.new(tweet_params)
+		@tweet.user = current_user
+		@tweet.save
 		# the flash is a hash --> key and value
 		flash.now[:success] = "Tweet Created"
 		# render new says to go to a new page instead of default
