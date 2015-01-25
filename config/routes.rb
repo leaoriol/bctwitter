@@ -7,6 +7,7 @@ Bctwitter::Application.routes.draw do
   resources :tweets
   devise_for :users
   resources :profiles
+  resources :relationships, only: [:create]
  
 
   # Example of regular route:

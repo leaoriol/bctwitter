@@ -24,6 +24,7 @@ class TweetsController < ApplicationController
 	def index
 		#this defines a news feed
 		@tweets = Tweet.all.reject{ |tweet| tweet.user == current_user}
+		@relationship = Relationship.new
 	end
 
 	private
