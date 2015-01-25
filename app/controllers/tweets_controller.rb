@@ -10,12 +10,13 @@ class TweetsController < ApplicationController
 	def create
 		@tweet = Tweet.new(tweet_params)
 		@tweet.user = current_user
-		@tweet.save
 
 		@tweets = current_user.tweets
 
-		# the flash is a hash --> key and value
-		flash.now[:success] = "Tweet Created"
+		if @tweet.save
+			# the flash is a hash --> key and value
+			flash.now[:success] = "Tweet Created"
+		end
 		# render new says to go to a new page instead of default
 		render 'new'
 	end
