@@ -8,7 +8,9 @@ Bctwitter::Application.routes.draw do
   devise_for :users
   resources :profiles
   resources :relationships, only: [:create]
- 
+  
+  get 'tags/:hash_tag_id', to: 'hashtags#show', as: :hash_tag
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
