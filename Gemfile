@@ -20,6 +20,8 @@ gem 'simple_form'
 
 gem 'devise'
 
+gem 'carrierwave'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
