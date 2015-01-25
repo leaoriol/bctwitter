@@ -1,5 +1,4 @@
  
-
  Hello Macgill :)
 
 
@@ -7,3 +6,12 @@
  	<%= f.input :content %>
 	<%= f.button :submit %>
  <% end %>
+
+<%-#for each tweet, output the content-%>
+<%-#|tweet| refers to the objects-%>
+
+<ul>
+ <% @tweets.each do |tweet| %>
+ 	<li><%= tweet.content %></li>
+ <% end %>
+</ul>
